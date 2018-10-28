@@ -24,6 +24,7 @@ class Profile extends Component {
 
 
     componentDidMount(){
+      if (this.props.currentUser.id) {
         fetch(`https://letscook-api.herokuapp.com/users/${this.props.currentUser.id}/recipes`)
         .then(r=>r.json())
         .then(userRecipes => this.setState({userRecipes}))
@@ -31,6 +32,8 @@ class Profile extends Component {
         fetch(`https://letscook-api.herokuapp.com/users/${this.props.currentUser.id}/collections`)
         .then(r=>r.json())
         .then(userCollections => this.setState({userCollections}))
+
+      }
     }
 
 

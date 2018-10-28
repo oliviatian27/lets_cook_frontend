@@ -31,7 +31,7 @@ class FormComponent extends Component {
       body:formData
     }).then(res=>res.json())
     .then(data=>this.setState({image:data.secure_url},()=>this.props.handleFormSubmit(e,this.state)))
-
+    e.target.reset()
   }
 
   handleImageChange=(e)=>{
